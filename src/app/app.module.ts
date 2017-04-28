@@ -1,37 +1,33 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule, Routes} from '@angular/router';
 
-import {Level1Component} from './level-1.component';
-import {Level2Component} from './level-2.component';
-import {Level3Component} from './level-3.component';
-import {Route, RouterModule} from '@angular/router';
+import {ErrorComponent} from './error.component';
+import {MainComponent} from './main.component';
+import {NavbarComponent} from './navbar.component';
 
-const ROUTES: Route[] = [
+const ROUTES: Routes = [
   {
     path: '',
-    component: Level2Component,
-    outlet: 'out1',
-    children: [
-      {
-        path: '',
-        component: Level3Component,
-        outlet: 'out2'
-      }
-    ]
+    component: NavbarComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
   },
 ];
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
   ],
   declarations: [
-    Level1Component,
-    Level2Component,
-    Level3Component,
+    MainComponent,
+    NavbarComponent,
+    ErrorComponent,
   ],
-  bootstrap: [Level1Component]
+  bootstrap: [MainComponent]
 })
 export class AppModule {
 }
