@@ -9,11 +9,13 @@ import {NavbarComponent} from './navbar.component';
 const ROUTES: Routes = [
   {
     path: '',
-    component: NavbarComponent
+    component: NavbarComponent,
+    outlet: 'the-out'
   },
   {
     path: 'error',
-    component: ErrorComponent
+    component: ErrorComponent,
+    outlet: 'the-out'
   },
 ];
 

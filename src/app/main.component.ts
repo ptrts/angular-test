@@ -5,6 +5,7 @@ import {Component} from '@angular/core';
   template: `
     <span>router-outlet:</span>
     <router-outlet></router-outlet>
+    <router-outlet name="the-out"></router-outlet>
   `
 })
 export class MainComponent {
